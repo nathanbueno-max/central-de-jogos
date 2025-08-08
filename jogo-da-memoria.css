@@ -1,0 +1,146 @@
+/*
+  ==========================================
+  Paleta de Cores e Configurações Globais
+  ==========================================
+*/
+:root {
+    --cor-fundo-geral: #f3e5f5; /* Roxo claro */
+    --cor-fundo-container: #ffffff; /* Branco */
+    --cor-texto-principal: #4a148c; /* Roxo escuro */
+    --cor-botoes: #9c27b0; /* Roxo vibrante */
+    --cor-botoes-hover: #7b1fa2; /* Roxo escuro para hover */
+    --cor-botoes-texto: #ffffff; /* Branco */
+    --cor-carta-fundo: #e1bee7; /* Roxo pastel para o verso da carta */
+    --cor-carta-borda: #8e24aa; /* Roxo médio */
+    --cor-par-encontrado: #43a047; /* Verde para pares encontrados */
+
+    /* Variáveis do Grid (definidas pelo JS) */
+    --colunas-grid: 5; 
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--cor-fundo-geral);
+}
+
+.container {
+    text-align: center;
+    background-color: var(--cor-fundo-container);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+}
+
+/*
+  ==========================================
+  Controles e Informações do Jogo
+  ==========================================
+*/
+.controles {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.dificuldade label, .informacoes-jogo {
+    font-size: 1.1em;
+    color: var(--cor-texto-principal);
+    font-weight: bold;
+}
+
+#num-cartas {
+    padding: 8px;
+    border: 1px solid var(--cor-botoes);
+    border-radius: 5px;
+}
+
+#mensagens {
+    margin-top: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--cor-texto-principal);
+}
+
+/*
+  ==========================================
+  Tabuleiro e Cartas
+  ==========================================
+*/
+.tabuleiro-memoria {
+    display: grid;
+    /* Aqui o JavaScript define o número de colunas dinamicamente */
+    grid-template-columns: repeat(var(--colunas-grid), 100px);
+    gap: 10px;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.carta {
+    width: 100px;
+    height: 100px;
+    background-color: var(--cor-carta-fundo);
+    border: 2px solid var(--cor-carta-borda);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: transform 0.6s, background-color 0.3s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.carta-frente, .carta-verso {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.carta-frente {
+    transform: rotateY(180deg);
+    font-weight: bold;
+    color: var(--cor-texto-principal);
+}
+
+.carta.virada {
+    transform: rotateY(180deg);
+    background-color: var(--cor-carta-fundo);
+}
+
+.carta.par-encontrado {
+    background-color: var(--cor-par-encontrado);
+    cursor: default;
+    transform: rotateY(180deg);
+}
+
+/*
+  ==========================================
+  Botões
+  ==========================================
+*/
+button, .back-button {
+    padding: 12px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: var(--cor-botoes);
+    color: var(--cor-botoes-texto);
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 5px;
+}
+
+button:hover, .back-button:hover {
+    background-color: var(--cor-botoes-hover);
+}

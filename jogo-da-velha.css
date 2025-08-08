@@ -1,0 +1,132 @@
+/*
+  ==========================================
+  Paleta de Cores e Configurações Globais
+  ==========================================
+*/
+:root {
+    --cor-fundo-geral: #e9f2ff;
+    --cor-fundo-container: #ffffff;
+    --cor-borda-jogo: #0056b3;
+    --cor-celula: #f0f6ff;
+    --cor-celula-hover: #d2e4ff;
+    --cor-jogador-x: #007bff;
+    --cor-jogador-o: #28a745; /* Mantive uma cor diferente para contraste */
+    --cor-texto-principal: #003366;
+    --cor-botoes: #007bff;
+    --cor-botoes-hover: #0056b3;
+    --cor-botoes-texto: #ffffff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--cor-fundo-geral);
+}
+
+.container {
+    text-align: center;
+    background-color: var(--cor-fundo-container);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/*
+  ==========================================
+  Títulos e Mensagens
+  ==========================================
+*/
+h1 {
+    color: var(--cor-texto-principal);
+    margin-bottom: 10px;
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--cor-texto-principal);
+}
+
+/*
+  ==========================================
+  Tabuleiro do Jogo
+  ==========================================
+*/
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 8px;
+    margin: 30px auto;
+    border: 3px solid var(--cor-borda-jogo);
+    border-radius: 5px;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    background-color: var(--cor-celula);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: var(--cor-celula-hover);
+}
+
+.cell.x {
+    color: var(--cor-jogador-x);
+}
+
+.cell.o {
+    color: var(--cor-jogador-o);
+}
+
+/*
+  ==========================================
+  Controles e Botões
+  ==========================================
+*/
+.opcoes-jogo {
+    margin-bottom: 20px;
+}
+
+.opcoes-jogo label {
+    font-size: 1.1em;
+    color: var(--cor-texto-principal);
+}
+
+#dificuldade {
+    padding: 8px;
+    margin-left: 10px;
+    border: 1px solid var(--cor-borda-jogo);
+    border-radius: 5px;
+}
+
+button, .back-button {
+    padding: 12px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: var(--cor-botoes);
+    color: var(--cor-botoes-texto);
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+button:hover, .back-button:hover {
+    background-color: var(--cor-botoes-hover);
+}

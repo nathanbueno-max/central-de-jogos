@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha - Contra o Bot</title>
+    <link rel="stylesheet" href="jogo-da-velha.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Jogo da Velha</h1>
+        <div class="opcoes-jogo">
+            <label for="dificuldade">Nível de Dificuldade:</label>
+            <select id="dificuldade">
+                <option value="facil">Fácil</option>
+                <option value="medio">Médio</option>
+                <option value="dificil">Difícil</option>
+            </select>
+            <button id="iniciar-jogo">Iniciar Jogo</button>
+        </div>
+
+        <div id="game-board" class="game-board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <h2 id="status">Selecione a dificuldade e inicie o jogo.</h2>
+        <button id="reset-button" style="display: none;">Reiniciar</button>
+        <a href="index.html" class="back-button">Voltar para a Central</a>
+    </div>
+
+    <script src="jogo-da-velha.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="jogo-da-forca.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo da Forca</h1>
+        <div id="forca">
+            <svg height="250" width="200" class="forca-svg">
+                <line x1="60" y1="20" x2="140" y2="20" />
+                <line x1="140" y1="20" x2="140" y2="50" />
+                <line x1="60" y1="20" x2="60" y2="230" />
+                <line x1="20" y1="230" x2="100" y2="230" />
+            
+                <circle id="cabeca" cx="140" cy="70" r="20" class="forca-parte"/>
+                <line id="corpo" x1="140" y1="90" x2="140" y2="150" class="forca-parte"/>
+                <line id="braco1" x1="140" y1="120" x2="120" y2="100" class="forca-parte"/>
+                <line id="braco2" x1="140" y1="120" x2="160" y2="100" class="forca-parte"/>
+                <line id="perna1" x1="140" y1="150" x2="120" y2="180" class="forca-parte"/>
+                <line id="perna2" x1="140" y1="150" x2="160" y2="180" class="forca-parte"/>
+            </svg>
+        </div>
+
+        <div id="palavra-container"></div>
+        <div id="letras-erradas-container">
+            <p>Letras erradas: <span id="letras-erradas"></span></p>
+        </div>
+        
+        <p class="instrucao">Adivinhe a letra:</p>
+        <input type="text" id="letra-input" maxlength="1" onkeypress="handleKeyPress(event)">
+        <button onclick="adivinharLetra()">Adivinhar</button>
+        
+        <p id="mensagem"></p>
+        
+        <div class="opcoes-jogo">
+            <button onclick="darDica()" id="dica-button">Dar Dica</button>
+            <input type="text" id="chute-input" placeholder="Chutar palavra">
+            <button onclick="chutarPalavra()">Chutar</button>
+        </div>
+
+        <button onclick="reiniciarJogo()">Reiniciar</button>
+        <a href="index.html" class="back-button">Voltar para a Central</a>
+    </div>
+    <script src="jogo-da-forca.js"></script>
+</body>
+</html>
